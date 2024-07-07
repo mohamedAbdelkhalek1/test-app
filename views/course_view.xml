@@ -1,0 +1,27 @@
+<odoo>
+
+<!--  create server action to set state closed  -->
+    <record id="course_cosed_server_action" model="ir.actions.server">
+        <field name="name">Course Closed</field>
+        <field name="model_id" ref="model_test_app_course"/>
+        <field name="binding_model_id" ref="model_test_app_course"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.action_closed()
+        </field>
+    </record>
+
+
+
+    <!--  create automated action to check expired course date  -->
+    <record id="check_expired_date_automated_action" model="ir.cron">
+        <field name="name">Course: Check Expired Date</field>
+        <field name="model_id" ref="model_test_app_course"/>
+        <field name="state">code</field>
+        <field name="code">model.check_expired_course_date()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+</odoo>

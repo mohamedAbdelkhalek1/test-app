@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+accesee_course,accesee_course,model_test_app_course,,1,1,1,1
+accesee_session,accesee_session,model_test_app_session,,1,1,1,1
+accesee_history,accesee_history,model_test_app_history,,1,1,1,1
+accesee_change_course_state,accesee_change_course_state,model_test_app_change_course_state,,1,1,1,1
+
+

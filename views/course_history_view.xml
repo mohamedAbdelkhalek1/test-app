@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+
+
+        <record model="ir.ui.view" id="test_app.history_form">
+            <field name="name">history form</field>
+            <field name="model">test_app.history</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="course_id"/>
+                        </group>
+                        <group>
+                            <field name="old_state"/>
+                            <field name="new_state"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="test_app.history_list">
+            <field name="name">history list</field>
+            <field name="model">test_app.history</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="user_id"/>
+                    <field name="course_id"/>
+                    <field name="old_state"/>
+                    <field name="new_state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="test_app.history_action_window">
+            <field name="name">history window</field>
+            <field name="res_model">test_app.history</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="history menu" id="test_app.history_menu" parent="test_app.menu_1"
+                  action="test_app.history_action_window"/>
+
+    </data>
+</odoo>

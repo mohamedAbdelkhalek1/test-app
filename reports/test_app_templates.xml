@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+
+        <template id="session_report_view">
+                <t t-call="web.html_container">
+                    <t t-call="web.internal_layout">
+                        <div class="page"> <!-- odoo class -->
+                            <table class="table table-border"> <!-- bootstrap class -->
+                                <tr>
+                                    <th>Session Name</th>
+                                    <th>Start date</th>
+                                    <th>End date</th>
+                                    <th>Attendees</th>
+                                </tr>
+                                <t t-foreach="docs" t-as="doc">
+                                 <tr>
+                                    <td> <span t-raw="doc.name"/> </td>
+                                    <td> <span t-field="doc.start_date"/> </td>
+                                    <td> <span t-field="doc.end_date"/> </td>
+                                    <td> <ul>
+                                        <t t-foreach="doc.attendee_ids" t-as="attendee">
+                                        <li> <span t-field="attendee.name"/> </li>
+                                        </t> </ul>
+                                    </td>
+                                 </tr>
+                                </t>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+        </template>
+
+<!--<template id="session_report_view">-->
+<!--    <t t-call="web.html_container">-->
+<!--        <t t-foreach="docs" t-as="doc">-->
+<!--            <t t-call="web.external_layout">-->
+<!--                <div class="page">-->
+<!--                    <h1><span t-field="doc.name"/></h1>-->
+<!--                </div>-->
+<!--            </t>-->
+<!--        </t>-->
+<!--    </t>-->
+<!--</template>-->
+
+    </data>
+</odoo>

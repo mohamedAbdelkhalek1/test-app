@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+
+        <record id="employee_form_inherit" model="ir.ui.view">
+            <field name="name">Employee Form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='coach_id']" position="after">
+                    <field name="related_course"/>
+                </xpath>
+
+
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="test_app.Employee_action_inherit">
+            <field name="name">employee window</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">tree,form,graph,pivot,kanban</field>
+        </record>
+
+        <menuitem name="Employees" id="Employee_menu_inherit" parent="test_app.menu_1"
+                  action="test_app.Employee_action_inherit"/>
+
+    </data>
+</odoo>

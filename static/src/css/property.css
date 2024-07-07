@@ -1,0 +1,4 @@
+.header_custom thead > tr th{
+    background-color: #808080 !important;
+    color: #fff !important;
+}

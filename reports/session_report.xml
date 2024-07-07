@@ -1,0 +1,45 @@
+<odoo>
+
+    <!--    <report id="session_report"-->
+    <!--            model="test_app.session"-->
+    <!--            string="Session Report"-->
+    <!--            name="test_app.session_report_view"-->
+    <!--            file="test_app.session_report"-->
+    <!--            report_type="qweb-pdf"-->
+    <!--    />-->
+    <record id="session_report_1" model="ir.actions.report">
+        <field name="name">Session Report</field>
+        <field name="model">test_app.session</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">test_app.session_report</field>
+        <field name="report_file">test_app.session_report</field>
+        <field name="binding_model_id" ref="model_test_app_session"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="session_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2 t-field="doc.name"/>
+                        <p>
+                            <strong>From date:</strong>
+                            <span t-field="doc.start_date"/>
+                            <strong>To:</strong>
+                            <span t-field="doc.end_date"/>
+                        </p>
+                        <h3>Attendees</h3>
+                        <ul>
+                            <t t-foreach="doc.attendee_ids" t-as="attendee">
+                                <li>
+                                    <span t-field="attendee.name"/>
+                                </li>
+                            </t>
+                        </ul>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

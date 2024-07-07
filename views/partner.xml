@@ -1,0 +1,42 @@
+<odoo>
+
+<!--  partner model views with view inheritance -->
+    <record id="partner_instructor_view_form" model="ir.ui.view">
+    <field name="name">partner.instructor</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+        <!-- find field description and add the field
+             new_field after it -->
+        <notebook position="inside">
+                <page string="Sessions">
+                    <group>
+                        <field name="instructor"/>
+                        <field name="session_ids"/>
+                    </group>
+                </page>
+                <page string="Code">
+                    <field name="code"/>
+                </page>
+
+        </notebook>
+    </field>
+    </record>
+
+
+    <!--  partner model action -->
+    <record model="ir.actions.act_window" id="test_app.conf_window">
+      <field name="name">partner window</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- menu categories -->
+    <menuitem name="configuration" id="test_app.conf" parent="test_app.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="Configuration list" id="test_app.conf1_list" parent="test_app.conf"
+              action="test_app.conf_window"/>
+
+
+</odoo>

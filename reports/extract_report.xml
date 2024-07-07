@@ -1,0 +1,410 @@
+<odoo>
+
+    <record id="extract_report_test" model="ir.actions.report">
+        <field name="name">Extract Test</field>
+        <field name="model">spm.extract</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">test_app.extract_view_test</field>
+        <field name="report_file">test_app.extract_view_test</field>
+        <field name="binding_model_id" ref="spm_extract.model_spm_extract"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <template id="extract_view_test">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+
+                        <style>
+                            .table{
+                            font-size: 12px;
+                            }
+
+                            .table td, .table th{
+                            border: 4px solid #fff;
+                            text-align: center;
+                            word-break: break-all;
+                            }
+
+                            .table-data td {
+                            background-color: #808080;
+                            color: #fff;
+                            width: 120px;
+                            }
+                            .table-data th {
+                            width: 240px;
+                            padding-left: 30px;
+                            text-align: left;
+                            }
+                            .table-order th {
+                            background-color: #808080;
+                            color: #fff;
+                            width: 7%;
+                            }
+
+
+                        </style>
+                        <table class="table table-borderless table-sm table-data">
+                            <tr>
+                                <th>progress statement</th>
+                                <td></td>
+                                <th>Contract Date</th>
+                                <td></td>
+                                <th>Progress Period From</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Region</th>
+                                <td></td>
+                                <th>Original completion date</th>
+                                <td></td>
+                                <th>Progress Period TO</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+
+                                <th>Contract Title</th>
+                                <td></td>
+                                <th>Time of Completion</th>
+                                <td></td>
+                                <th>Interim/ Final</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Contract No</th>
+                                <td></td>
+                                <th>Revised Completion (Days)</th>
+                                <td></td>
+                                <th>Contract value</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th style="background-color: transparent;"/>
+                                <td style="background-color: transparent;"/>
+                                <th>Delay to end of Progress Period (Days)</th>
+                                <td></td>
+                                <th>Revised Value</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th style="background-color: transparent;"/>
+                                <td style="background-color: transparent;"/>
+                                <th>Delay Liquidated Damages (DLDs) Per Day</th>
+                                <td></td>
+                                <th style="background-color: transparent;"/>
+                                <td style="background-color: transparent;"/>
+                            </tr>
+                            <tr>
+                                <th style="background-color: transparent;"/>
+                                <td style="background-color: transparent;"/>
+                                <th>Total DLD's</th>
+                                <td></td>
+                                <th style="background-color: transparent;"/>
+                                <td style="background-color: transparent;"/>
+                            </tr>
+                            <tr>
+                                <th style="background-color: transparent;"/>
+                                <td style="background-color: transparent;"/>
+                                <th>Maximum Contract DLD's 10% Cap:</th>
+                                <td></td>
+                                <th style="background-color: transparent;"/>
+                                <td style="background-color: transparent;"/>
+                            </tr>
+                        </table>
+
+                        <br/>
+
+                        <table class="table table-borderless table-striped table-sm table-order">
+                            <thead>
+                                <tr>
+                                    <td style="background-color: transparent;"/>
+                                    <td style="background-color: transparent;"/>
+                                    <th colspan="4">Contract</th>
+                                    <th colspan="3">Uptodate</th>
+                                    <th colspan="3">Previous</th>
+                                </tr>
+                                <tr>
+                                    <th>No</th>
+                                    <th style="width: 23%">Items</th>
+                                    <th>Contract
+                                        Quantity
+                                    </th>
+                                    <th>Unit</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                    <th>Uptodate
+                                        Quantity
+                                    </th>
+                                    <th>Ratio</th>
+                                    <th>Total</th>
+                                    <th>Previous
+                                        Quantity
+                                    </th>
+                                    <th>Ratio</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="sequence_number" t-value="0"/>
+                                <tr t-foreach="doc.extract_line_ids" t-as="line">
+                                    <td>
+                                        <t t-set="sequence_number" t-value="sequence_number+1"/>
+                                        <span t-esc="sequence_number"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.product_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.quantity"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.product_uom_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.unit_price"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.quantity * line.unit_price "/>
+                                    </td>
+                                    <td>
+                                        <t t-if="line.quantity - line.diff_quantity > 0">
+                                            <span t-esc="line.quantity - line.diff_quantity"/>
+                                        </t>
+                                    </td>
+                                    <td>
+                                        <strong t-esc="'{:.2f}'.format((line.quantity - line.diff_quantity)/line.quantity)"/>
+                                        %
+                                    </td>
+                                    <td>
+                                        <span t-esc="(line.quantity - line.diff_quantity)* line.unit_price"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.quantity - line.pre_quantity"/>
+                                    </td>
+                                    <td>
+                                        <strong t-esc="'{:.2f}'.format((line.quantity - line.pre_quantity) / line.quantity)"/>
+                                        %
+                                    </td>
+                                    <td>
+                                        <span t-esc="(line.quantity - line.pre_quantity)*line.unit_price"/>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                            <tfooter>
+                                <tr>
+                                    <td rowspan="3"> </td>
+                                    <th>Untaxed Amount</th>
+                                    <td rowspan="3" colspan="3" style="background-color: transparent;"> </td>
+                                    <td>
+                                        <t t-esc="doc.extract_sale_id.amount_untaxed"/>
+                                    </td>
+                                    <td rowspan="3" colspan="2" style="background-color: transparent;"> </td>
+                                    <td>
+                                        <t t-esc="doc.demand_amount_untaxed"/>
+                                    </td>
+                                    <td rowspan="3" colspan="2" style="background-color: transparent;"> </td>
+                                    <td>
+                                        <t t-esc="doc.diff_amount_untaxed"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Tax</th>
+                                    <td>
+                                        <t t-esc="doc.extract_sale_id.amount_tax"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="doc.demand_amount_tax"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="doc.diff_amount_tax"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                    <td>
+                                        <t t-esc="doc.extract_sale_id.amount_total"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="doc.demand_amount_total"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="doc.diff_amount_total"/>
+                                    </td>
+
+                                </tr>
+
+                            </tfooter>
+                        </table>
+
+
+                        <!--                        <style>-->
+                        <!--                            .table-data td {-->
+                        <!--                            background-color: #6c757d;-->
+                        <!--                            color: #fff;-->
+                        <!--                            word-break: break-all;-->
+                        <!--                            border: 5px solid #fff;-->
+                        <!--                            text-align: center;-->
+                        <!--                            width: 170px;-->
+                        <!--                            }-->
+                        <!--                            .table-data th {-->
+                        <!--                            word-break: break-all;-->
+                        <!--                            width: 180px;-->
+                        <!--                            }-->
+
+                        <!--                            .table-orders th, .table-orders td {-->
+                        <!--                            background-color: #6c757d;-->
+                        <!--                            color: #fff;-->
+                        <!--                            border: 5px solid #fff;-->
+                        <!--                            text-align: center;-->
+                        <!--                            }-->
+                        <!--                            .table-orders td {-->
+                        <!--                            background-color: LightGray;-->
+                        <!--                            word-break: break-all;-->
+                        <!--                            color: #000;-->
+                        <!--                            }-->
+                        <!--                        </style>-->
+                        <!--                        <table class="table table-borderless table-sm table-data">-->
+                        <!--                            <tr>-->
+                        <!--                                <th>Name</th>-->
+                        <!--                                <td>-->
+                        <!--                                    <t t-esc="doc.partner_id.name"/>-->
+                        <!--                                </td>-->
+                        <!--                                <th>Contact</th>-->
+                        <!--                                <td>-->
+                        <!--                                    <t t-esc="doc.partner_id.mobile"/>-->
+                        <!--                                </td>-->
+                        <!--                                <th>Tax Id</th>-->
+                        <!--                                <td>-->
+                        <!--                                    <t t-esc="doc.partner_id.phone"/>-->
+                        <!--                                </td>-->
+                        <!--                            </tr>-->
+                        <!--                            <tr>-->
+                        <!--                                <th>Phone</th>-->
+                        <!--                                <td>-->
+                        <!--                                    <t t-esc="doc.partner_id.phone"/>-->
+                        <!--                                </td>-->
+                        <!--                                <th>Email</th>-->
+                        <!--                                <td>-->
+                        <!--                                    <t t-esc="doc.partner_id.email"/>-->
+                        <!--                                </td>-->
+                        <!--                                <th>Website</th>-->
+                        <!--                                <td>-->
+                        <!--                                    <t t-esc="doc.partner_id.website"/>-->
+                        <!--                                </td>-->
+                        <!--                            </tr>-->
+                        <!--                            <tr>-->
+
+                        <!--                                <th>Sales</th>-->
+                        <!--                                <td>-->
+                        <!--                                    <t t-esc="doc.user_id"/>-->
+                        <!--                                </td>-->
+                        <!--                                <th>Order Date</th>-->
+                        <!--                                <td>-->
+                        <!--                                    <t t-esc="doc.date_order"/>-->
+                        <!--                                </td>-->
+                        <!--                                <th>Payment Terms</th>-->
+                        <!--                                <td>-->
+                        <!--                                    <t t-esc="doc.payment_term_id.name"/>-->
+                        <!--                                </td>-->
+                        <!--                            </tr>-->
+                        <!--                        </table>-->
+
+                        <!--                        <t t-set="lines_to_report" t-value="doc._get_order_lines_to_report()"/>-->
+                        <!--                        <t t-set="display_discount" t-value="any(l.discount for l in lines_to_report)"/>-->
+
+                        <!--                        <table class="table table-borderless table-sm table-orders">-->
+                        <!--                            &lt;!&ndash; In case we want to repeat the header, remove "display: table-row-group" &ndash;&gt;-->
+                        <!--                            <thead style="display: table-row-group">-->
+                        <!--                                <tr>-->
+                        <!--                                    <th name="th_description" class="text-start">Description</th>-->
+                        <!--                                    <th name="th_quantity" class="text-end">Quantity</th>-->
+                        <!--                                    <th name="th_priceunit" class="text-end">Unit Price</th>-->
+                        <!--                                    <th name="th_discount" t-if="display_discount" class="text-end">-->
+                        <!--                                        <span>Disc.%</span>-->
+                        <!--                                    </th>-->
+                        <!--                                    <th name="th_taxes" class="text-end">Taxes</th>-->
+                        <!--                                    <th name="th_subtotal" class="text-end">-->
+                        <!--                                        <span>Amount</span>-->
+                        <!--                                    </th>-->
+                        <!--                                </tr>-->
+                        <!--                            </thead>-->
+                        <!--                            <tbody class="sale_tbody">-->
+
+                        <!--                                <t t-set="current_subtotal" t-value="0"/>-->
+
+                        <!--                                <t t-foreach="lines_to_report" t-as="line">-->
+
+                        <!--                                    <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal"/>-->
+
+                        <!--                                    <tr t-att-class="'bg-200 fw-bold o_line_section' if line.display_type == 'line_section' else 'fst-italic o_line_note' if line.display_type == 'line_note' else ''">-->
+                        <!--                                        <t t-if="not line.display_type">-->
+                        <!--                                            <td name="td_name">-->
+                        <!--                                                <span t-field="line.name">Bacon Burger</span>-->
+                        <!--                                            </td>-->
+                        <!--                                            <td name="td_quantity" class="text-end">-->
+                        <!--                                                <span t-field="line.product_uom_qty">3</span>-->
+                        <!--                                                <span t-field="line.product_uom">units</span>-->
+                        <!--                                                <span t-if="line.product_packaging_id">-->
+                        <!--                                                    (-->
+                        <!--                                                    <span t-field="line.product_packaging_qty"-->
+                        <!--                                                          t-options='{"widget": "integer"}'/>-->
+                        <!--                                                    <span t-field="line.product_packaging_id"/>)-->
+                        <!--                                                </span>-->
+                        <!--                                            </td>-->
+                        <!--                                            <td name="td_priceunit" class="text-end">-->
+                        <!--                                                <span t-field="line.price_unit">3</span>-->
+                        <!--                                            </td>-->
+                        <!--                                            <td t-if="display_discount" class="text-end">-->
+                        <!--                                                <span t-field="line.discount">-</span>-->
+                        <!--                                            </td>-->
+                        <!--                                            <td name="td_taxes" class="text-end">-->
+                        <!--                                                <span t-out="', '.join(map(lambda x: (x.description or x.name), line.tax_id))">-->
+                        <!--                                                    Tax 15%-->
+                        <!--                                                </span>-->
+                        <!--                                            </td>-->
+                        <!--                                            <td t-if="not line.is_downpayment" name="td_subtotal"-->
+                        <!--                                                class="text-end o_price_total">-->
+                        <!--                                                <span t-field="line.price_subtotal">27.00</span>-->
+                        <!--                                            </td>-->
+                        <!--                                        </t>-->
+                        <!--                                        <t t-elif="line.display_type == 'line_section'">-->
+                        <!--                                            <td name="td_section_line" colspan="99">-->
+                        <!--                                                <span t-field="line.name">A section title</span>-->
+                        <!--                                            </td>-->
+                        <!--                                            <t t-set="current_section" t-value="line"/>-->
+                        <!--                                            <t t-set="current_subtotal" t-value="0"/>-->
+                        <!--                                        </t>-->
+                        <!--                                        <t t-elif="line.display_type == 'line_note'">-->
+                        <!--                                            <td name="td_note_line" colspan="99">-->
+                        <!--                                                <span t-field="line.name">A note, whose content usually applies to the-->
+                        <!--                                                    section or product above.-->
+                        <!--                                                </span>-->
+                        <!--                                            </td>-->
+                        <!--                                        </t>-->
+                        <!--                                    </tr>-->
+
+                        <!--                                    <t t-if="current_section and (line_last or doc.order_line[line_index+1].display_type == 'line_section') and not line.is_downpayment">-->
+                        <!--                                        <tr class="is-subtotal text-end">-->
+                        <!--                                            <td name="td_section_subtotal" colspan="99">-->
+                        <!--                                                <strong class="mr16">Subtotal</strong>-->
+                        <!--                                                <span-->
+                        <!--                                                        t-out="current_subtotal"-->
+                        <!--                                                        t-options='{"widget": "monetary", "display_currency": doc.currency_id}'-->
+                        <!--                                                >31.05-->
+                        <!--                                                </span>-->
+                        <!--                                            </td>-->
+                        <!--                                        </tr>-->
+                        <!--                                    </t>-->
+                        <!--                                </t>-->
+                        <!--                            </tbody>-->
+                        <!--                        </table>-->
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

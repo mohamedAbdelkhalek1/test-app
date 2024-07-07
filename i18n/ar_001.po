@@ -1,0 +1,704 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* test_app
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-04 06:43+0000\n"
+"PO-Revision-Date: 2024-07-04 06:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.session_report
+msgid "<strong>From date:</strong>"
+msgstr "<strong>من تاريخ:</strong>"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.session_report
+msgid "<strong>To:</strong>"
+msgstr "<strong>إلى:</strong>"
+
+#. module: test_app
+#. odoo-python
+#: code:addons/odoo-17.0/my_custom_addons/test_app/models/models.py:0
+#: code:addons/test_app/models/models.py:0
+#, python-format
+msgid "A session instructor cannot be attendee"
+msgstr "لا يمكن أن يكون المحاضر مقيد مع الحضور"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__active
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "رمز نوع النشاط"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__attendance_rate
+msgid "Attendance rate"
+msgstr "نسبة الحضور"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__attendee_ids
+#: model_terms:ir.ui.view,arch_db:test_app.session_report
+msgid "Attendees"
+msgstr "الحضور"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__attendee_count
+msgid "Attendees Count"
+msgstr "عدد الحضور"
+
+#. module: test_app
+#: model:ir.actions.act_window,name:test_app.act_session_graph
+#: model_terms:ir.ui.view,arch_db:test_app.board_session_view
+msgid "Attendees by course"
+msgstr "الحضور حسب الدورة"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.change_course_state_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.change_course_state_form
+msgid "Change"
+msgstr "تغيير"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.change_course_state_form
+msgid "Change Course state"
+msgstr "تغيير حالة الدورة"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.course_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: test_app
+#: model:ir.model.fields.selection,name:test_app.selection__test_app_change_course_state__new_state__closed
+#: model:ir.model.fields.selection,name:test_app.selection__test_app_change_course_state__old_state__closed
+#: model:ir.model.fields.selection,name:test_app.selection__test_app_course__state__closed
+#: model:ir.model.fields.selection,name:test_app.selection__test_app_history__new_state__closed
+#: model:ir.model.fields.selection,name:test_app.selection__test_app_history__old_state__closed
+msgid "Closed"
+msgstr "مغلق"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_res_partner__code
+#: model:ir.model.fields,field_description:test_app.field_res_users__code
+msgid "Code"
+msgstr "الكود"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__color
+msgid "Color"
+msgstr "اللون"
+
+#. module: test_app
+#: model:ir.model,name:test_app.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_change_course_state__course_id
+#: model:ir.model.fields,field_description:test_app.field_test_app_history__course_id
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__course_id
+msgid "Course"
+msgstr "الدورة"
+
+#. module: test_app
+#: model:ir.actions.server,name:test_app.course_cosed_server_action
+msgid "Course Closed"
+msgstr "الدورة مغلقة"
+
+#. module: test_app
+#: model:ir.actions.server,name:test_app.check_expired_date_automated_action_ir_actions_server
+msgid "Course: Check Expired Date"
+msgstr "الدورة: تحقق من تاريخ انتهاء الصلاحية"
+
+#. module: test_app
+#: model:ir.actions.act_window,name:test_app.act_course_list
+#: model_terms:ir.ui.view,arch_db:test_app.board_session_view
+msgid "Courses"
+msgstr "الدورات"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_change_course_state__create_uid
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__create_uid
+#: model:ir.model.fields,field_description:test_app.field_test_app_history__create_uid
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__create_uid
+#: model:ir.model.fields,field_description:test_app.field_test_app_test_app__create_uid
+msgid "Created by"
+msgstr "منشأ بواسطة"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_change_course_state__create_date
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__create_date
+#: model:ir.model.fields,field_description:test_app.field_test_app_history__create_date
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__create_date
+#: model:ir.model.fields,field_description:test_app.field_test_app_test_app__create_date
+msgid "Created on"
+msgstr "منشأ في"
+
+#. module: test_app
+#: model:ir.ui.menu,name:test_app.dashboard
+msgid "Dashboards"
+msgstr "لوحات المعلومات"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_change_course_state__description
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__description
+#: model:ir.model.fields,field_description:test_app.field_test_app_history__description
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__course_description
+#: model:ir.model.fields,field_description:test_app.field_test_app_test_app__description
+msgid "Description"
+msgstr "وصف"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_change_course_state__display_name
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__display_name
+#: model:ir.model.fields,field_description:test_app.field_test_app_history__display_name
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__display_name
+#: model:ir.model.fields,field_description:test_app.field_test_app_test_app__display_name
+msgid "Display Name"
+msgstr "عرض الإسم"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__duration
+msgid "Duration"
+msgstr "المدة"
+
+#. module: test_app
+#: model:ir.ui.menu,name:test_app.Employee_menu_inherit
+msgid "Employees"
+msgstr "الموظفون"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__end_date
+msgid "End Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__expiration_date
+msgid "Expiration Date"
+msgstr "تاريخ انتهاء الصلاحية"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: test_app
+#: model:ir.model.fields,help:test_app.field_test_app_course__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز أداة التصميم المذهلة، مثل fa-tasks"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.session_form
+msgid "General"
+msgstr "عام"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_change_course_state__id
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__id
+#: model:ir.model.fields,field_description:test_app.field_test_app_history__id
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__id
+#: model:ir.model.fields,field_description:test_app.field_test_app_test_app__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: test_app
+#: model:ir.model.fields,help:test_app.field_test_app_course__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة لتحديد نشاط استثنائي."
+
+#. module: test_app
+#: model:ir.model.fields,help:test_app.field_test_app_course__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فإن الرسائل الجديدة تتطلب اهتمامك."
+
+#. module: test_app
+#: model:ir.model.fields,help:test_app.field_test_app_course__message_has_error
+#: model:ir.model.fields,help:test_app.field_test_app_course__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل لديها خطأ في التسليم."
+
+#. module: test_app
+#. odoo-python
+#: code:addons/odoo-17.0/my_custom_addons/test_app/models/models.py:0
+#: code:addons/test_app/models/models.py:0
+#, python-format
+msgid "Incorrect seats value"
+msgstr "قيمة غير صحيحة"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_res_partner__instructor
+#: model:ir.model.fields,field_description:test_app.field_res_users__instructor
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__instructor_id
+msgid "Instructor"
+msgstr "المحاضر"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__is_expired
+msgid "Is Expired"
+msgstr "منتهية الصلاحية"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_change_course_state__write_uid
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__write_uid
+#: model:ir.model.fields,field_description:test_app.field_test_app_history__write_uid
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__write_uid
+#: model:ir.model.fields,field_description:test_app.field_test_app_test_app__write_uid
+msgid "Last Updated by"
+msgstr "اخر تعديل بواسطة"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_change_course_state__write_date
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__write_date
+#: model:ir.model.fields,field_description:test_app.field_test_app_history__write_date
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__write_date
+#: model:ir.model.fields,field_description:test_app.field_test_app_test_app__write_date
+msgid "Last Updated on"
+msgstr "اخر تعديل في"
+
+#. module: test_app
+#: model:ir.ui.menu,name:test_app.menu_1_list
+msgid "List"
+msgstr "قائمة"
+
+#. module: test_app
+#: model:ir.ui.menu,name:test_app.menu_1
+msgid "Menu 1"
+msgstr "قائمة 1"
+
+#. module: test_app
+#: model:ir.ui.menu,name:test_app.menu_2
+msgid "Menu 2"
+msgstr "قائمة 2"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعد نهائي لنشاطي"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.course_search
+msgid "My courses"
+msgstr "دوراتي"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__name
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__name
+#: model:ir.model.fields,field_description:test_app.field_test_app_test_app__name
+msgid "Name"
+msgstr "الإسم"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_change_course_state__new_state
+#: model:ir.model.fields,field_description:test_app.field_test_app_history__new_state
+msgid "New State"
+msgstr "الحالة الجديدة"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "موعد نهاية النشاط التالي"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: test_app
+#: model:ir.model.fields,help:test_app.field_test_app_course__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: test_app
+#: model:ir.model.fields,help:test_app.field_test_app_course__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_change_course_state__old_state
+#: model:ir.model.fields,field_description:test_app.field_test_app_history__old_state
+msgid "Old State"
+msgstr "الحالة القديمة"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.course_form
+msgid "Open"
+msgstr "فتح"
+
+#. module: test_app
+#: model:ir.model.fields.selection,name:test_app.selection__test_app_change_course_state__new_state__opened
+#: model:ir.model.fields.selection,name:test_app.selection__test_app_change_course_state__old_state__opened
+#: model:ir.model.fields.selection,name:test_app.selection__test_app_course__state__opened
+#: model:ir.model.fields.selection,name:test_app.selection__test_app_history__new_state__opened
+#: model:ir.model.fields.selection,name:test_app.selection__test_app_history__old_state__opened
+msgid "Opened"
+msgstr "مفتوح"
+
+#. module: test_app
+#. odoo-python
+#: code:addons/odoo-17.0/my_custom_addons/test_app/models/models.py:0
+#: code:addons/test_app/models/models.py:0
+#, python-format
+msgid "Please, increase seats or remove excess attendees"
+msgstr "الرجاء، زيادة المقاعد أو إزالة الحضور الزائد"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__responsible_id
+msgid "Presenter"
+msgstr "المحاضر"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__ref
+msgid "Ref"
+msgstr "مرجع"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_hr_employee__related_course
+msgid "Related Course"
+msgstr "المقرر ذو الصلة"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.course_form
+#: model_terms:ir.ui.view,arch_db:test_app.course_search
+msgid "Responsible"
+msgstr "المسؤول"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة القصيرة"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.session_form
+msgid "Schedule"
+msgstr "الجدول الزمني"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.session_form
+msgid "Search"
+msgstr "بحث"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__seats
+msgid "Seats"
+msgstr "المقاعد"
+
+#. module: test_app
+#: model:ir.ui.menu,name:test_app.test_app
+msgid "Server to list"
+msgstr "الخادم للقائمة"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.session_calendar
+msgid "Session Calender"
+msgstr "تقويم الجلسة"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.session_graph
+msgid "Session Graph"
+msgstr "مخطط الجلسة"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.session_pivot
+msgid "Session Pivot"
+msgstr "جدول الجلسة"
+
+#. module: test_app
+#: model:ir.actions.report,name:test_app.session_report_1
+msgid "Session Report"
+msgstr ""
+
+#. module: test_app
+#: model:ir.actions.act_window,name:test_app.act_session_calendar
+#: model:ir.model.fields,field_description:test_app.field_res_partner__session_ids
+#: model:ir.model.fields,field_description:test_app.field_res_users__session_ids
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__session_ids
+#: model_terms:ir.ui.view,arch_db:test_app.board_session_view
+#: model_terms:ir.ui.view,arch_db:test_app.course_form
+msgid "Sessions"
+msgstr "الجلسات"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_session__start_date
+msgid "Start Date"
+msgstr "تاريخ البدء"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: test_app
+#: model:ir.model.fields,help:test_app.field_test_app_course__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط له: الأنشطة المستقبلية."
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__summary
+msgid "Summary"
+msgstr "ملخص"
+
+#. module: test_app
+#. odoo-python
+#: code:addons/odoo-17.0/my_custom_addons/test_app/models/models.py:0
+#: code:addons/test_app/models/models.py:0
+#, python-format
+msgid "The number of seats may not be Positive"
+msgstr "عدد المقاعد قد لا يكون إيجابيًا"
+
+#. module: test_app
+#: model:ir.model.constraint,message:test_app.constraint_test_app_course_name_description_check
+msgid "The title should not be as the description"
+msgstr "العنوان لا يجب ان يكون مثل الاسم"
+
+#. module: test_app
+#: model:ir.model.constraint,message:test_app.constraint_test_app_course_name_unique
+msgid "This name has been used before"
+msgstr "تم استخدام هذا اﻹسم من قبل"
+
+#. module: test_app
+#. odoo-python
+#: code:addons/odoo-17.0/my_custom_addons/test_app/models/models.py:0
+#: code:addons/test_app/models/models.py:0
+#, python-format
+msgid "Too many attendees"
+msgstr "عدد المشاركين كبير جدًا"
+
+#. module: test_app
+#: model:ir.model.fields,help:test_app.field_test_app_course__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_change_course_state__user_id
+#: model:ir.model.fields,field_description:test_app.field_test_app_history__user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_test_app__value
+msgid "Value"
+msgstr "القيمة"
+
+#. module: test_app
+#: model_terms:ir.ui.view,arch_db:test_app.form
+msgid "Value1"
+msgstr "القيمة1"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_test_app__value2
+#: model_terms:ir.ui.view,arch_db:test_app.form
+msgid "Value2"
+msgstr "القيمة2"
+
+#. module: test_app
+#: model:ir.model.fields,field_description:test_app.field_test_app_course__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع الإلكتروني"
+
+#. module: test_app
+#: model:ir.model.fields,help:test_app.field_test_app_course__website_message_ids
+msgid "Website communication history"
+msgstr "تاريخ التواصل عبر الموقع الإلكتروني"
+
+#. module: test_app
+#: model:ir.actions.server,name:test_app.launch_change_course_state_wizard
+msgid "change wizard"
+msgstr "تغيير الساحر"
+
+#. module: test_app
+#: model:ir.actions.act_window,name:test_app.change_course_state_action_view
+msgid "change_course_state_view"
+msgstr "عرض تغيير حالة المقرر"
+
+#. module: test_app
+#: model:ir.model,name:test_app.model_test_app_course
+msgid "course"
+msgstr "دورة تطبيق الاختبار"
+
+#. module: test_app
+#: model:ir.model,name:test_app.model_test_app_history
+msgid "course state history"
+msgstr "تاريخ حالة المقرر"
+
+#. module: test_app
+#: model:ir.actions.act_window,name:test_app.course_action_window
+msgid "course window"
+msgstr "نافذة الدورة"
+
+#. module: test_app
+#: model:ir.ui.menu,name:test_app.course_menu_1_list
+msgid "course_menu"
+msgstr "قائمة الدورة"
+
+#. module: test_app
+#: model:ir.model.fields,help:test_app.field_test_app_session__duration
+msgid "duration in days"
+msgstr "المدة بالأيام"
+
+#. module: test_app
+#: model:ir.actions.act_window,name:test_app.Employee_action_inherit
+msgid "employee window"
+msgstr "نافذة الموظف"
+
+#. module: test_app
+#: model:ir.ui.menu,name:test_app.history_menu
+msgid "history menu"
+msgstr "قائمة التاريخ"
+
+#. module: test_app
+#: model:ir.actions.act_window,name:test_app.history_action_window
+msgid "history window"
+msgstr "نافذة التاريخ"
+
+#. module: test_app
+#: model:ir.model.fields,help:test_app.field_test_app_session__seats
+msgid "number of seats"
+msgstr "عدد المقاعد"
+
+#. module: test_app
+#: model:ir.actions.act_window,name:test_app.open_board_session
+#: model:ir.ui.menu,name:test_app.menu_board_session
+#: model_terms:ir.ui.view,arch_db:test_app.board_session_view
+msgid "session dashboard"
+msgstr "لوحة معلومات الجلسة"
+
+#. module: test_app
+#: model:ir.actions.act_window,name:test_app.session_action_window
+msgid "session window"
+msgstr "نافذة الجلسة"
+
+#. module: test_app
+#: model:ir.ui.menu,name:test_app.session_menu_1_list
+msgid "session_menu"
+msgstr "قائمة الجلسة"
+
+#. module: test_app
+#: model:ir.ui.menu,name:test_app.menu_root
+msgid "test_app"
+msgstr "تطبيق الاختبار"
+
+#. module: test_app
+#: model:ir.actions.server,name:test_app.action_server
+msgid "test_app server"
+msgstr "خادم تطبيق الاختبار"
+
+#. module: test_app
+#: model:ir.actions.act_window,name:test_app.action_window
+msgid "test_app window"
+msgstr "نافذة تطبيق الاختبار"
+
+#. module: test_app
+#: model:ir.model,name:test_app.model_test_app_change_course_state
+msgid "test_app.change_course_state"
+msgstr "test_app.تغيير حالة المقرر"
+
+#. module: test_app
+#: model:ir.model,name:test_app.model_test_app_session
+msgid "test_app.session"
+msgstr "جلسة تطبيق الاختبار"
+
+#. module: test_app
+#: model:ir.model,name:test_app.model_test_app_test_app
+msgid "test_app.test_app"
+msgstr "تطبيق الاختبار"

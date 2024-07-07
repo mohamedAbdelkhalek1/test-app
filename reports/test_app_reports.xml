@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+
+        <record id="session_report_1" model="ir.actions.report">
+            <field name="name">Sessions Report</field>
+            <field name="model">test_app.session</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">test_app.session_report_view</field>
+            <field name="report_file">test_app/report/session_report_view</field>
+            <field name="binding_model_id" ref="model_test_app_session"/>
+            <field name="binding_type">report</field>
+        </record>
+
+
+    </data>
+</odoo>
